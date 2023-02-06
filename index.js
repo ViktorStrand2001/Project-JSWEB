@@ -20,14 +20,20 @@ function headerfunction() {
       <label for="email">Email:</label><br>
       <input type="text" name="email" id="email" class="forminput" placeholder="t ex viktor@gmail.com">
       <br>
-      <input type="text" id="showitem" class="forminput" disabled>
+      <label for="email">Product ID:</label><br>
+      <input type="text" id="showitem" class="forminput" placeholder="product ID" disabled>
       <br>
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" class="forminput" placeholder="t ex street 56">
+      <br>
+      <label for="Shipment">Shipment:</label><br>
       <select name="shipment" id="shipment" class="forminput">
         <option value="fast shipment">Fast Shipment</option> 
         <option value="standard shipment">Standard Shipment</option>
       </select>
       <br>
-      <input type="submit" value="submit" id="submitbutton">
+      <br>
+      <input type="submit" class="btn btn-success" value="submit" id="submitbutton">
       </form>
       <hr>
     `
@@ -40,7 +46,7 @@ let emailEl = document.getElementById("email");
 let shipmentEl = document.getElementById("shipment")
 let submitbuttonEl = document.getElementById("submitbutton"); 
 let showitemEl = document.getElementById("showitem");
-let forminputEl = document.getElementsByClassName("forminput");
+let addressEl = document.getElementById("address");
 
 //button disabled
 
@@ -67,6 +73,7 @@ function view(output) {
         <p> ${output[i].description} </p>
         <p> Average rating: ${output[i].rating.rate} of: ${output[i].rating.count} customer.</p>
         <p> Pris: ${output[i].price}kr </p>
+        <p> Item ID: ${output[i].id} </p>
         <button type="button" class="btn btn-primary btn-lg" id="item" onclick="listitem(${output[i].id})">Buy</button>
         
         <hr>
@@ -81,7 +88,7 @@ function createBuyer(){
     let email = emailEl.value;
     let shipment = shipmentEl.value;
     let shopitem = showitemEl.value;
-
+    let address = addressEl.value;
     // Buyer value to JSON
     let body = JSON.stringify({
         
@@ -97,6 +104,9 @@ function createBuyer(){
             },
             "email": {
                 "stringValue": email
+            },
+            "address": {
+                "stringValue": address
             }
         }
     })
