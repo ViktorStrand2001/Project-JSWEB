@@ -27,14 +27,14 @@ function orderview(data) {
         
         renderEl.innerHTML += `
         <article>
-        <h1> ${buyer.fields.name.stringValue} </h1>
+        <h1> Name: ${buyer.fields.name.stringValue} </h1>
         <p> Email: ${buyer.fields.email.stringValue} </p>
         <p> Product: ${buyer.fields.product.stringValue} </p>
-        <p> Product: ${buyer.fields.address.stringValue} </p>
+        <p> Address: ${buyer.fields.address.stringValue} </p>
         <p> Shipment: ${buyer.fields.shipment.stringValue} </p>
 
-        <button class="btn btn-danger" onclick="deletebuyer('${buyer.name}')">Tabort order för ${buyer.fields.name.stringValue}</button>
-        <button class="btn btn-primary" onclick="patchdata('${buyer}')">Updatera order för ${buyer.fields.name.stringValue}</button>
+        <button class="btn btn-danger" onclick="deletebuyer('${buyer.name}')">Drop order for ${buyer.fields.name.stringValue}</button>
+        <button class="btn btn-primary" onclick="patchdata('${buyer.name}')">update order for ${buyer.fields.name.stringValue}</button>
         </article>
         <br>
         <hr>
@@ -42,20 +42,7 @@ function orderview(data) {
     }
 }
 
-// Element for update button
-
-
-// body for buyer
-
-
-// CRUD/REST Functions
-function inputdata() {
-
- }
-
-function patchdata() {
-    
-
+function patchdata(name) {
     let adminbuyername = adminnameEl.value;
     let adminemail = adminemailEl.value;
     let adminshipment = adminshipmentEl.value;
@@ -66,25 +53,25 @@ function patchdata() {
         
         "fields": {
             "name": {
-                "stringValue": "buyername"
+                "stringValue": adminbuyername
             },
             "shipment": {
-                "stringValue": "shipment"
+                "stringValue": adminshipment
             },
             "product": {
-                "stringValue": "shopitem"
+                "stringValue": adminshopitem
             },
             "email": {
-                "stringValue": "email"
+                "stringValue": adminemail
             },
             "address": {
-                "stringValue": "address"
+                "stringValue": adminaddress
             }
         }
     })
 
 
-    fetch("https://firestore.googleapis.com/v1/projects/fir-firebas-92e56/databases/(default)/documents/buyers/CgTHk7Qf5v7GDF1qicpe", {
+    fetch("https://firestore.googleapis.com/v1/" + name, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: body

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,23 +25,23 @@
       <h2>Change order</h2>
       <form>
       <label for="name">Name:</label><br>
-      <input type="text" name="buyername" id="adminname" placeholder="t ex Viktor Strand">
+      <input type="text" name="buyername" id="adminname" placeholder="t ex Viktor Strand" required>
       <br>
 
       <label for="email">Email:</label><br>
-      <input type="text" name="email" id="adminemail" placeholder="t ex viktor@gmail.com">
+      <input type="text" name="email" id="adminemail" placeholder="t ex viktor@gmail.com" required>
       <br>
 
       <label for="showitem">Item ID:</label><br>
-      <input type="text" id="adminshopitem" placeholder="item id:">
+      <input type="text" id="adminshopitem" placeholder="item id:" required>
       <br>
 
        <label for="address">Address:</label><br>
-      <input type="text" id="adminaddress" placeholder="address:">
+      <input type="text" id="adminaddress" placeholder="address:" required>
       <br>
 
       <label for="shipment">Shipment:</label><br>
-      <select name="shipment" id="adminshipment">
+      <select name="shipment" id="adminshipment" required>
         <option value="fast shipment">Fast Shipment</option> 
         <option value="standard shipment">Standard Shipment</option>
       </select>

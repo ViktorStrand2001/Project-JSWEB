@@ -15,19 +15,19 @@ function headerfunction() {
     headerEl.innerHTML += `
     <form>
       <label for="name">Name:</label><br>
-      <input type="text" name="buyername" id="buyername" class="forminput" placeholder="t ex Viktor Strand">
+      <input type="text" name="buyername" id="buyername" class="forminput" placeholder="t ex Viktor Strand" required>
       <br>
       <label for="email">Email:</label><br>
-      <input type="text" name="email" id="email" class="forminput" placeholder="t ex viktor@gmail.com">
+      <input type="text" name="email" id="email" class="forminput" placeholder="t ex viktor@gmail.com" required>
       <br>
       <label for="email">Product ID:</label><br>
-      <input type="text" id="showitem" class="forminput" placeholder="product ID" disabled>
+      <input type="text" id="showitem" class="forminput" placeholder="product ID" disabled required>
       <br>
       <label for="address">Address:</label><br>
-      <input type="text" id="address" class="forminput" placeholder="t ex street 56">
+      <input type="text" id="address" class="forminput" placeholder="t ex street 56" required>
       <br>
       <label for="Shipment">Shipment:</label><br>
-      <select name="shipment" id="shipment" class="forminput">
+      <select name="shipment" id="shipment" class="forminput" required>
         <option value="fast shipment">Fast Shipment</option> 
         <option value="standard shipment">Standard Shipment</option>
       </select>
@@ -47,12 +47,6 @@ let shipmentEl = document.getElementById("shipment")
 let submitbuttonEl = document.getElementById("submitbutton"); 
 let showitemEl = document.getElementById("showitem");
 let addressEl = document.getElementById("address");
-
-//button disabled
-
-
-
-
 
 // list item function
 function listitem(item) {
@@ -89,6 +83,12 @@ function createBuyer(){
     let shipment = shipmentEl.value;
     let shopitem = showitemEl.value;
     let address = addressEl.value;
+
+    if (!buyername || !shipment || !shopitem || !email || !address) {
+        console.log("fill all forms!")
+        return;
+}
+
     // Buyer value to JSON
     let body = JSON.stringify({
         
