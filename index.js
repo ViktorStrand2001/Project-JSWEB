@@ -20,7 +20,7 @@ function headerfunction() {
       <label for="email">Email:</label><br>
       <input type="text" name="email" id="email" class="forminput" placeholder="t ex viktor@gmail.com" required>
       <br>
-      <label for="email">Product ID:</label><br>
+      <label for="text">Product ID:</label><br>
       <input type="text" id="showitem" class="forminput" placeholder="product ID" disabled required>
       <br>
       <label for="address">Address:</label><br>
