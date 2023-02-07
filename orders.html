@@ -22,8 +22,8 @@
     <h1>Admin Station</h1>
     <hr>
     <section id="formula">
-      <h2>Change order</h2>
       <form>
+      <input type="hidden" id="ID">
       <label for="name">Name:</label><br>
       <input type="text" name="buyername" id="adminname" placeholder="t ex Viktor Strand" required>
       <br>
@@ -45,6 +45,9 @@
         <option value="fast shipment">Fast Shipment</option> 
         <option value="standard shipment">Standard Shipment</option>
       </select>
+      <br>
+      <br>
+      <button id="updateorder">Submit update</button>
       </form>
       <hr>
 
