@@ -43,6 +43,7 @@ function orderview(data) {
 }
 
 function patchdata(name) {
+    console.log(name);
     let adminbuyername = adminnameEl.value;
     let adminemail = adminemailEl.value;
     let adminshipment = adminshipmentEl.value;
@@ -88,6 +89,6 @@ function deletebuyer(name) {
     fetch("https://firestore.googleapis.com/v1/" + name, {
         method: 'DELETE'
     })
-    location.reload()
+    console.log("Deleted")
  }
 

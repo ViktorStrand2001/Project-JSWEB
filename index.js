@@ -68,8 +68,9 @@ function view(output) {
         <p> Average rating: ${output[i].rating.rate} of: ${output[i].rating.count} customer.</p>
         <p> Pris: ${output[i].price}kr </p>
         <p> Item ID: ${output[i].id} </p>
+        <a href="#">
         <button type="button" class="btn btn-primary btn-lg" id="item" onclick="listitem(${output[i].id})">Buy</button>
-        
+        </a>
         <hr>
         </articale>
         `
