@@ -48,9 +48,11 @@ function orderview(data) {
         <p> Product: ${buyer.fields.product.stringValue} </p>
         <p> Address: ${buyer.fields.address.stringValue} </p>
         <p> Shipment: ${buyer.fields.shipment.stringValue} </p>
-
+        
         <button class="btn btn-danger" onclick="deletebuyer('${buyer.name}')">Drop order for ${buyer.fields.name.stringValue}</button>
+        <a href="#">
         <button class="btn btn-primary" id="item" onclick="orderinfo('${buyer.name}')">update order for ${buyer.fields.name.stringValue}</button>
+        </a>      
         </article>
         <br>
         <hr>
@@ -98,6 +100,7 @@ function patchdata(raws) {
     .then(res => res.json())
     .then(data => console.log(data));
     console.log("update done");
+    alert("You updated an order")
     setTimeout(location.reload(), 3000);
  }
 
@@ -108,6 +111,7 @@ function deletebuyer(name) {
         method: 'DELETE'
     })
     console.log("Deleted")
+    alert("You deleted an order!");
     setTimeout(location.reload(), 3000);
  }
 

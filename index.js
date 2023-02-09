@@ -14,19 +14,19 @@ fetch("https://fakestoreapi.com/products")
 function headerfunction() {
     headerEl.innerHTML += `
     <form>
-      <label for="name">Name:</label><br>
+      <label for="name">Name</label><br>
       <input type="text" name="buyername" id="buyername" class="forminput" placeholder="t ex Viktor Strand" required>
       <br>
-      <label for="email">Email:</label><br>
+      <label for="email">Email</label><br>
       <input type="text" name="email" id="email" class="forminput" placeholder="t ex viktor@gmail.com" required>
       <br>
-      <label for="text">Product ID:</label><br>
+      <label for="text">Product ID</label><br>
       <input type="text" id="showitem" class="forminput" placeholder="product ID" disabled required>
       <br>
-      <label for="address">Address:</label><br>
+      <label for="address">Address</label><br>
       <input type="text" id="address" class="forminput" placeholder="t ex street 56" required>
       <br>
-      <label for="Shipment">Shipment:</label><br>
+      <label for="Shipment">Shipment</label><br>
       <select name="shipment" id="shipment" class="forminput" required>
         <option value="fast shipment">Fast Shipment</option> 
         <option value="standard shipment">Standard Shipment</option>
@@ -64,13 +64,15 @@ function view(output) {
         <h1> ${output[i].category} </h1>
         <h2> ${output[i].title} </h2>
         <img class='img' alt=Bilder på våra produkter src= ${output[i].image}>
-        <p> ${output[i].description} </p>
+        <p> ${output[i].description}. </p>
         <p> Average rating: ${output[i].rating.rate} of: ${output[i].rating.count} customer.</p>
-        <p> Pris: ${output[i].price}kr </p>
-        <p> Item ID: ${output[i].id} </p>
+        <p> Pris: ${output[i].price}kr. </p>
+        <p> Item ID: ${output[i].id}. </p>
+        <div>
         <a href="#">
         <button type="button" class="btn btn-primary btn-lg" id="item" onclick="listitem(${output[i].id})">This item in cart</button>
         </a>
+        </div>
         <hr>
         </articale>
         `
@@ -121,6 +123,7 @@ function createBuyer(){
     })
         .then(res => res.json)
         .then(data => console.log(data));
+        alert("We have resived your order!");
 }
 
 submitbuttonEl.addEventListener("click", createBuyer);

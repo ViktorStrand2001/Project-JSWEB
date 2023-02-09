@@ -8,7 +8,71 @@
  text-decoration: none;
 }
 
+h1{
+    text-align: center;
+    margin: 5%;
+    text-decoration: underline;
+}
+
+h2{
+    text-align: center;
+    margin: 5%;
+}
+
+p{
+    margin: 5%;
+    text-align: center;
+}
+
+section{
+    text-align: center; 
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.1); 
+    margin: 50px;
+}
+
+header {
+    text-align: center;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+}
+
+body{
+    width: 100%;
+    margin: 12px;
+}
+
+article{
+    padding: 12px;
+    gap: 30px;
+    text-align: center;
+}
+
 img{
-    width: 40%;
-    margin-bottom: 1.5em;
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+    object-fit: contain;
+    display: flex;
+    float: inline-end;
+}
+
+body a{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    margin: 1%;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    
+}
+div button{
+        margin: 10px;
+}
+
+form{
+    justify-content: center;
 }
