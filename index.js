@@ -123,7 +123,8 @@ function createBuyer(){
     })
         .then(res => res.json)
         .then(data => console.log(data));
-        alert("We have resived your order!");
+    alert("We have resived your order!");
+    setTimeout(location.reload(), 3000);
 }
 
 submitbuttonEl.addEventListener("click", createBuyer);
